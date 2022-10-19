@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=[device-width], initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <style>
         @font-face {
@@ -13,17 +15,20 @@
             src: url(Fonte/Rajdhani-SemiBold.ttf);
             font-weight: 600;
         }
+
         @font-face {
             font-family: 'semoca';
             src: url(Fonte/Rajdhani-Medium.ttf);
             font-weight: 400;
         }
-        *{
+
+        * {
             font-family: 'semoca';
             font-weight: 400;
         }
+
         #container {
-            width: 1129px ;
+            width: 1129px;
             height: 780px;
             background-image: url("Certificados\ SEMAC\ \(6\).png");
             background-size: cover;
@@ -36,30 +41,36 @@
             /* justify-content: center; */
             align-items: center;
         }
-        #nome{
+
+        #nome {
             font-weight: 600;
         }
-        .page-header{
+
+        .page-header {
             font-weight: 600;
             margin-top: 157px;
             font-size: 41px;
 
         }
-        .page-text{
+
+        .page-text {
             width: 80%;
             text-align: center;
             line-height: 2.5rem;
         }
-        .assinatura{
+
+        .assinatura {
             display: flex;
             width: 100%;
             flex-direction: row;
-            justify-content: space-evenly   ;
+            justify-content: space-evenly;
         }
-        .item{
+
+        .item {
             width: 172px;
         }
-        .assimag{
+
+        .assimag {
             width: 100%;
             display: inline;
         }
@@ -67,10 +78,10 @@
     <div id="container">
         <h1 class="page-header">Certificado</h1>
         <h1 class="page-text">
-           Certificamos para os devidos fins que <span id="nome"></span> participou da
+            Certificamos para os devidos fins que <span id="nome"></span> participou da
             XXXII Semana da Computação da UNESP de São José do Rio Preto,
             realizada no período de 10 à 14 de Outubro de 2022,
-            <br>com carga horária de 20 horas.
+            com carga horária de 20 horas.
         </h1>
     </div>
 </body>
@@ -78,106 +89,102 @@
 <script>
     var nomehtml = document.getElementById("nome");
 
-    function downloadPdf(nome) {
-    nomehtml.innerHTML = nome;
-    const item = document.querySelector("#container");
-    item.style.width = "810px !important";
-    var opt = {
-    //margin:       1,
-    filename:     nome+'.pdf',
-    image:        { type: 'jpeg', quality: 1 },
-    html2canvas:  { scale: 1 },
-    jsPDF:        {unit: 'in', format: 'A4', orientation: 'landscape' },
-    
-        };
-    console.log(nome)
-    
-    html2pdf().set(opt).from(item).save()
-    
-}
-    var nome = [
-    "Vitor de Almeida Santos "
-    ,"Arthur Riva "
-    ,"Caio Moraes Borges "
-    ,"Joao Lucas Alves da Silva Lima "
-    ,"Paulo Vitor De Queiroz Zanele "
-    ,"Murilo Ignácio Carvalho "
-    ,"David Silva da Costa "
-    ,"Gabriel Campos "
-    ,"Victor Cipolato "
-    ,"Luan Bonizi "
-    ,"Rubens Abrão  "
-    ,"João Resende Barroso "
-    ,"Matheus Moriel "
-    ,"Pedro Mestriner  "
-    ,"Matheus Santos "
-    ,"Gustavo Kuroda "
-    ,"Luan Batista  "
-    ,"Douglas Silva  "
-    ,"Arthur Borsonaro Uezu "
-    ,"Gabriel Leoni Duarte "
-    ,"Carlos Eduardo Da Rocha Morais  "
-    ,"Julia Tadei "
-    ,"William d'abruzzo Martins  "
-    ,"Murilo Tolentino Rufino "
-    ,"joao pedro manoel caetano "
-    ,"Nathan D. Silva "
-    ,"Yhan Pena "
-    ,"João Manoel Cardoso Martinez "
-    ,"Matheus Franscisco Santangelo Reynaldo "
-    ,"Ivan Augusto De Oliveira "
-    ,"Luiz Enrique Bursi "
-    ,"Ricardo Fares "
-    ,"Guilherme de Almeida "
-    ,"Goiás Tavares Borges "
-    ,"Lucas Yano "
-    ,"Igor Constantino "
-    ,"Tayná Barbato "
-    ,"Júlia Mendes "
-    ,"Igor Yoshimitsu Ide "
-    ,"Guilherme Romanholo Bofo "
-    ,"Daphne Lie Pereira "
-    ,"Artur Nakamura Merenda "
-    ,"Vinicius Augusto Toreli Borgue "
-    ,"Victória Bechara "
-    ,"Ana Beatriz Gomes Takehara  "
-    ,"Rodrigo Silveira Soares "
-    ,"Étore Xavier  "
-    ,"Amanda Prampero "
-    ,"Bruno Rodrigues "
-    ,"Priscilla Shiota Fedichina Carrossoni "
-    ,"João Victor Millane "
-    ,"Gabriel Inagaki Marcelino "
-    ,"Lucas Xavier "
-    ,"Claudio Gramulha "
-    ,"Carlos Alberto de Souza Junior  "
-    ,"Leonardo Medeiros Prado "
-    ,"Gabriel Dalalana "
-    ,"Wellington Reguera Gouveia "
-    ,"Igor Gouveia "
-    ,"Gustavo Pereira "
-    ,"Vinícius Araújo Beltrami "
-    ,"Pedro Henrique de Medeiros Gatti "
-    ,"Luiza Guimarães Cavarçan  "
-    ,"Lucas Emanuel Genova "
-    ,"Bruno Vinicius Veronez de Jesus "
-    ,"bruno zara "
-    ,"Jean Achour "
-    ,"Rafael de Mello "
-    ,"Pedro Henrique Gonçalves "
-    ,"Danilo Scarin "
-    ,"Vitor Rozeno "
-    ,"Pedro Benedicto de Melo Cardana  "
-    ,"Julia Rodrigues Gubolin "
-    ,"Lara Cesquini "
-    ,"Thales Cândido Rosa "
-    ,"Rafael Takehara "
-    ,"Heitor Xavier de Abreu "
+    async function downloadPdf(nomes) {
+        const item = document.querySelector("#container");
+        item.style.width = "810px !important";
+        for (let nome of nomes) {
+            var opt = {
+                //margin:       1,
+                filename: nome + '.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 1 },
+                jsPDF: { unit: 'in', format: 'A4', orientation: 'landscape' },
 
-]
-
-nome.forEach(item=>{downloadPdf(item)}) 
-    
-
+            };
+            nomehtml.innerHTML = nome;
+            await html2pdf().set(opt).from(item).save();
+        }
+    }
+    var nomes = [
+        "Vitor de Almeida Santos "
+        , "Arthur Riva "
+        , "Caio Moraes Borges "
+        , "Joao Lucas Alves da Silva Lima "
+        , "Paulo Vitor De Queiroz Zanele "
+        , "Murilo Ignácio Carvalho "
+        , "David Silva da Costa "
+        , "Gabriel Campos "
+        , "Victor Cipolato "
+        , "Luan Bonizi "
+        , "Rubens Abrão  "
+        , "João Resende Barroso "
+        , "Matheus Moriel "
+        , "Pedro Mestriner  "
+        , "Matheus Santos "
+        , "Gustavo Kuroda "
+        , "Luan Batista  "
+        , "Douglas Silva  "
+        , "Arthur Borsonaro Uezu "
+        , "Gabriel Leoni Duarte "
+        , "Carlos Eduardo Da Rocha Morais  "
+        , "Julia Tadei "
+        , "William d'abruzzo Martins  "
+        , "Murilo Tolentino Rufino "
+        , "joao pedro manoel caetano "
+        , "Nathan D. Silva "
+        , "Yhan Pena "
+        , "João Manoel Cardoso Martinez "
+        , "Matheus Franscisco Santangelo Reynaldo "
+        , "Ivan Augusto De Oliveira "
+        , "Luiz Enrique Bursi "
+        , "Ricardo Fares "
+        , "Guilherme de Almeida "
+        , "Goiás Tavares Borges "
+        , "Lucas Yano "
+        , "Igor Constantino "
+        , "Tayná Barbato "
+        , "Júlia Mendes "
+        , "Igor Yoshimitsu Ide "
+        , "Guilherme Romanholo Bofo "
+        , "Daphne Lie Pereira "
+        , "Artur Nakamura Merenda "
+        , "Vinicius Augusto Toreli Borgue "
+        , "Victória Bechara "
+        , "Ana Beatriz Gomes Takehara  "
+        , "Rodrigo Silveira Soares "
+        , "Étore Xavier  "
+        , "Amanda Prampero "
+        , "Bruno Rodrigues "
+        , "Priscilla Shiota Fedichina Carrossoni "
+        , "João Victor Millane "
+        , "Gabriel Inagaki Marcelino "
+        , "Lucas Xavier "
+        , "Claudio Gramulha "
+        , "Carlos Alberto de Souza Junior  "
+        , "Leonardo Medeiros Prado "
+        , "Gabriel Dalalana "
+        , "Wellington Reguera Gouveia "
+        , "Igor Gouveia "
+        , "Gustavo Pereira "
+        , "Vinícius Araújo Beltrami "
+        , "Pedro Henrique de Medeiros Gatti "
+        , "Luiza Guimarães Cavarçan  "
+        , "Lucas Emanuel Genova "
+        , "Bruno Vinicius Veronez de Jesus "
+        , "bruno zara "
+        , "Jean Achour "
+        , "Rafael de Mello "
+        , "Pedro Henrique Gonçalves "
+        , "Danilo Scarin "
+        , "Vitor Rozeno "
+        , "Pedro Benedicto de Melo Cardana  "
+        , "Julia Rodrigues Gubolin "
+        , "Lara Cesquini "
+        , "Thales Cândido Rosa "
+        , "Rafael Takehara "
+        , "Heitor Xavier de Abreu "
+    ]
+    downloadPdf(nomes);
 </script>
+
 </html>
