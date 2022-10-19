@@ -88,13 +88,13 @@
     image:        { type: 'jpeg', quality: 1 },
     html2canvas:  { scale: 1 },
     jsPDF:        {unit: 'in', format: 'A4', orientation: 'landscape' },
+    
         };
     console.log(nome)
+    
     html2pdf().set(opt).from(item).save()
     
 }
-lazy_load()
-
     var nome = [
     "Vitor de Almeida Santos "
     ,"Arthur Riva "
@@ -176,9 +176,8 @@ lazy_load()
 
 ]
 
-for (n of nome){
-    downloadPdf(n)
-}
-setInterval(1000)
+nome.forEach(item=>{downloadPdf(item)}) 
+    
+
 </script>
 </html>
