@@ -64,12 +64,12 @@ name = [
 # name = [
 #     "Arthur Borsonaro Uezu"
 # ]
-fromaddr = 'silva.silva@semac.cc'
+fromaddr = 'EMAIL'
 filename = "Certificado"
 minicursor = "Minicurso de Robótica"
 s = smtplib.SMTP('smtp.gmail.com', 587) 
 s.starttls() 
-s.login(fromaddr, '&Miguel96') 
+s.login(fromaddr, 'SENHA') 
 
 for i in range(len(name)):
      
