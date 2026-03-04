@@ -1,114 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=[device-width], initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Certificados</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .nav {
+            display: flex;
+            gap: 8px;
+            padding: 10px 16px;
+            background: #1a1a2e;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .nav a {
+            color: #aaa;
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav a.active {
+            color: #fff;
+            background: #e94560;
+        }
+    </style>
 </head>
 
 <body>
-    <style>
-        @font-face {
-            font-family: 'semoca';
-            src: url(Fonte/Rajdhani-SemiBold.ttf);
-            font-weight: 600;
-        }
-
-        @font-face {
-            font-family: 'semoca';
-            src: url(Fonte/Rajdhani-Medium.ttf);
-            font-weight: 400;
-        }
-
-        * {
-            font-family: 'semoca';
-            font-weight: 400;
-        }
-
-        #container {
-            width: 1129px;
-            height: 780px;
-            /* background-image: url("modelo de certificado"); */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin-top: 5px;
-            margin-left: -10px;
-            display: flex;
-            flex-direction: column;
-            /* justify-content: center; */
-            align-items: center;
-        }
-
-        #nome {
-            font-weight: 600;
-        }
-
-        .page-header {
-            font-weight: 600;
-            margin-top: 157px;
-            font-size: 41px;
-
-        }
-
-        .page-text {
-            width: 87%;
-            text-align: center;
-            line-height: 2.5rem;
-        }
-
-        .assinatura {
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-
-        .item {
-            width: 172px;
-        }
-
-        .assimag {
-            width: 100%;
-            display: inline;
-        }
-    </style>
+    <nav class="nav">
+        <a href="index.html" class="active">🎓 Certificados</a>
+        <a href="rifa.html">🎟️ Rifas</a>
+    </nav>
     <div id="container">
         <h1 class="page-header">Certificado</h1>
-        <h1 class="page-text">
+        <p class="page-text">
             <!-- Texto contido no certificado -->
-        </h1>
+        </p>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     var nomehtml = document.getElementById("nome");
 
-    
     async function downloadPdf(nomes) {
         const item = document.querySelector("#container");
         item.style.width = "810px !important";
         for (let nome of nomes) {
             var opt = {
-                //margin:       1,
                 filename: nome + '.pdf',
                 image: { type: 'png', quality: 0.98 },
-                html2canvas: { scale: 1},
+                html2canvas: { scale: 1 },
                 jsPDF: { unit: 'in', format: 'A4', orientation: 'landscape' },
-
             };
             nomehtml.innerHTML = nome;
             await html2pdf().set(opt).from(item).save();
         }
     }
     var nomes = [
-]
+    ]
 
-   downloadPdf(nomes);
+    downloadPdf(nomes);
 </script>
 
 </html>
-
-

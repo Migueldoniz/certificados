@@ -1,0 +1,16 @@
+# Ambiente
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# PDFs gerados
+*.pdf
+
+# ZIP desnecessário
+Fonte/*.zip
+
+# Sistema
+.DS_Store
+Thumbs.db

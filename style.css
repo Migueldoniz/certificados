@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'semoca';
+    src: url(Fonte/Rajdhani-SemiBold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'semoca';
+    src: url(Fonte/Rajdhani-Medium.ttf);
+    font-weight: 400;
+}
+
+* {
+    font-family: 'semoca';
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 1129px;
+    height: 780px;
+    /* background-image: url("modelo de certificado"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nome {
+    font-weight: 600;
+}
+
+.page-header {
+    font-weight: 600;
+    margin-top: 157px;
+    font-size: 41px;
+}
+
+.page-text {
+    width: 87%;
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+}
+
+.assinatura {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.item {
+    width: 172px;
+}
+
+.assimag {
+    width: 100%;
+    display: inline;
+}
